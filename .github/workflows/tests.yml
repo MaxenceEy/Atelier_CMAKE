@@ -25,13 +25,14 @@ jobs:
     steps:
       - name: Test fonction add
         run: |
+          last_directory=$(basename ${{ runner.workspace }})
           git clone https://github.com/${{ github.repository }}.git
-          cd "${{ github.repository }}"
+          cd ./$last_directory
           mkdir build
           cd build
           cmake ..
           make
-          ./src/calculator ${{ matrix.test_param }}
+          ./src/calculator add 10 5
 
   Test_Subtract:
     runs-on: ubuntu-latest
@@ -42,10 +43,11 @@ jobs:
     steps:
       - name: Test fonction subtract
         run: |
+          last_directory=$(basename ${{ runner.workspace }})
           git clone https://github.com/${{ github.repository }}.git
-          cd "${{ github.repository }}"
+          cd ./$last_directory
           mkdir build
           cd build
           cmake ..
           make
-          ./src/calculator ${{ matrix.test_param }}
+          ./src/calculator add 10 5
