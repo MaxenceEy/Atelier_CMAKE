@@ -30,7 +30,7 @@ jobs:
           cd ./$last_directory
           mkdir build
           cd build
-          cmake ..
+          cmake .. 
           make
           ./src/calculator add 10 5
 
