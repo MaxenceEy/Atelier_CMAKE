@@ -22,6 +22,7 @@ jobs:
     strategy:
       matrix:
         test_param: [ "add 10 5", "add 20 7", "add 15 8" ] 
+        experimental: [false]
     steps:
       - name: Test fonction add
         run: |
@@ -40,6 +41,7 @@ jobs:
     strategy:
       matrix:
         test_param: [ "sub 20 5", "sub 15 7", "sub 30 12" ]  
+        experimental: [false]
     steps:
       - name: Test fonction subtract
         run: |
